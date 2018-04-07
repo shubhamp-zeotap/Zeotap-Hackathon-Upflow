@@ -1,0 +1,102 @@
+{
+  "DDP": {
+    "StepsSequence": [
+      {
+        "StepName": "S3Download",
+        "InputConfig": [
+          {
+            "Name": "Source",
+            "DataType": "string",
+            "Input": "-1.0",
+            "Default": "0",
+            "CanUseDefault": false
+          }, 
+          {
+            "Name": "ExportGuid",
+            "DataType": "string",
+            "Input": "-1.1",
+            "Default": "0",
+            "CanUseDefault": false
+          }, 
+          {
+            "Name": "IsSourceDir",
+            "DataType": "bool",
+            "Input": "",
+            "Default": true,
+            "CanUseDefault": true
+          }, 
+          {
+            "Name": "Profile",
+            "DataType": "string",
+            "Input": "",
+            "Default": "",
+            "CanUseDefault": true
+          }
+        ],
+        "OutputConfig": [
+          {
+            "Name": "Target",
+            "DataType": "string"
+          }
+        ]
+      },
+      {
+        "StepName": "Unzip",
+        "InputConfig": [
+          {
+            "Name": "Source",
+            "DataType": "string",
+            "Input": "0.0",
+            "Default": "0",
+            "CanUseDefault": false            
+          }
+        ],
+        "OutputConfig": [
+          {
+            "Name": "Target",
+            "DataType": "string"
+          }
+        ]        
+      },
+      {
+        "StepName": "Transform",
+        "InputConfig": [
+          {
+            "Name": "Source",
+            "DataType": "string",
+            "Input": "1.0",
+            "Default": "0",
+            "CanUseDefault": false
+          }, 
+          {
+            "Name": "ExportGuid",
+            "DataType": "string",
+            "Input": "-1.1",
+            "Default": "0",
+            "CanUseDefault": false
+          }, 
+          {
+            "Name": "SegmentMapping",
+            "DataType": "map[string]string",
+            "Input": "-1.2",
+            "Default": {},
+            "CanUseDefault": false
+          },
+          {
+            "Name": "DoParallel",
+            "DataType": "bool",
+            "Input": "",
+            "Default": true,
+            "CanUseDefault": true
+          }       
+        ],
+        "OutputConfig": [
+          {
+            "Name": "Target",
+            "DataType": "string"
+          }
+        ]
+      }      
+    ]
+  }
+}

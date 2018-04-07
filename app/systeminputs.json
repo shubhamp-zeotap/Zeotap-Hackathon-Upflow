@@ -1,0 +1,20 @@
+{
+	"inputs" : [
+		{
+	        "Name": "S3Path",
+	        "DataType": "string"
+		},
+		{
+			"Name": "ExportGuid",
+	        "DataType": "string"
+		},
+		{
+			"Name": "Country",
+			"DataType": "float64"
+		},
+		{
+			"Name": "Channel",
+			"DataType": "float64"
+		}
+	]
+}
