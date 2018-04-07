@@ -32,12 +32,14 @@ func (c App) Workflows() revel.Result {
 }
 
 func (c App) UpdateWorkflow(channel string) revel.Result {
+	prepareHeaders(&c)
 	var jsonData map[string]interface{}
 	c.Params.BindJSON(&jsonData)
 	return c.RenderJSON(app.UpdateWorkflow(channel, jsonData))
 }
 
 func (c App) RunWorkflow(channel string) revel.Result {
+	prepareHeaders(&c)
 	var jsonData map[string]interface{}
 	c.Params.BindJSON(&jsonData)
 	//fmt.Println(jsonData)
