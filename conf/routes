@@ -8,10 +8,15 @@ module:testrunner
 
 
 GET     /                                       App.Index
+OPTIONS     /                                       App.Index
 GET		/plugins								App.Plugins
+OPTIONS		/plugins							App.Index
 GET		/workflows								App.Workflows
+OPTIONS		/workflows								App.Index
 POST	/workflow/:channel						App.UpdateWorkflow						
+OPTIONS	/workflow/:channel						App.Index						
 GET		/systemconfig							App.SystemConfig
+OPTIONS		/systemconfig							App.Index
 POST	/run/:channel							App.RunWorkflow
 
 # Ignore favicon requests
