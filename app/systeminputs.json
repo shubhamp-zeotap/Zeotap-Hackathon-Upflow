@@ -9,12 +9,8 @@
 	        "DataType": "string"
 		},
 		{
-			"Name": "Country",
-			"DataType": "float64"
-		},
-		{
-			"Name": "Channel",
-			"DataType": "float64"
+			"Name": "SegmentMapping",
+			"DataType": "map[string]interface {}"
 		}
 	]
 }

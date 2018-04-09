@@ -84,19 +84,19 @@ func Create(args... interface{}) (r *SplitBySize, err error) {
 		return nil, errors.New("string expected as input 1")
 	}
 
-	arg1, ok := args[1].(float64)
+	arg1, ok := args[1].(string)
 	if !ok {
-		return nil, errors.New("int expected as input 2")
+		return nil, errors.New("string expected as input 2")
 	}
 
-	arg2, ok := args[2].(string)
-	if !ok || (arg2 != "k" && arg2 != "m")  {
-		return nil, errors.New("string (k | m) expected as input 3")
+	arg2, ok := args[2].(float64)
+	if !ok {
+		return nil, errors.New("int expected as input 3")
 	}
 
 	arg3, ok := args[3].(string)
-	if !ok {
-		return nil, errors.New("string expected as input 4")
+	if !ok || (arg3 != "k" && arg3 != "m")  {
+		return nil, errors.New("string (k | m) expected as input 4")
 	}
 
 	arg4, ok := args[4].(bool)
@@ -107,9 +107,9 @@ func Create(args... interface{}) (r *SplitBySize, err error) {
 	plugin := SplitBySize{}
 	plugin.Input = PluginInput{
 		Source : arg0, 
-		Size : arg1,
-		Unit : arg2,
-		Target : arg3,
+		Target : arg1,
+		Size : arg2,
+		Unit : arg3,
 		DeleteOriginal : arg4,
 	}
 

@@ -21,7 +21,8 @@ func ExecuteWorkflow(workflow map[string]interface{}, globalInput map[string]int
 		inputConfigs := step["InputConfig"].([]interface{})
 
 		fmt.Println("Executing step : " + stepName)
-		for _, i := range inputConfigs {
+		for inputIndex, i := range inputConfigs {
+			fmt.Println("Input Config :", inputIndex)
 			input := i.(map[string]interface{})
 			givenValue := fmt.Sprintf("%s", input["Input"])
 			inputRef := strings.Split(givenValue, ".")			
